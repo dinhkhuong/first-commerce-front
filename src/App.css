@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.footer {
+  position: fixed;
+  text-align: center;
+  bottom: 0; 
+  width: 100%; 
+  height: 40px; 
+  background-color: #222222;
+}
+
+.navbar{
+  justify-content: space-between
+}
