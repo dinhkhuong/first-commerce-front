@@ -23,6 +23,7 @@ class AuthenticationService {
         this.setupAxiosInterceptors(this.createBasicAuthToken(username, password))
     }
 
+    //couldn't execute user logout. The first authenticated user of the browser stays in session and can't logout util turn browser on and off
     logout() {
         sessionStorage.removeItem(USER_NAME_SESSION_ATTRIBUTE_NAME);
         

@@ -16,7 +16,7 @@ class RouterComponent extends Component {
 
         
         return(
-            <div>
+            <div style={{backgroundImage: `url("https://image.freepik.com/free-vector/hand-drawn-christmas-seamless-background-pattern_167715-636.jpg")`}}>
                 <Router>
                     <HeaderComponent />
                         <Switch>

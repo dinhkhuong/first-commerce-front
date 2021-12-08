@@ -34,28 +34,33 @@ class MyCartComponent extends Component {
                 
                     <br/>
                     
+                    {/* try out rendering card element from bootstrap */}
                     <CardGroup>
                         {
-                            this.state.products.map (
-                                product =>                                                  
-                                <Card className="mb-8" style={{ width: '18rem' , textAlign: "center" }} key={product.productId}>
-                                    <Card.Img variant="top" src={product.image} />
-                                    <Card.Body>
-                                        <Card.Title>{product.productName}</Card.Title>
-                                        <Card.Text>
-                                        {product.productDescription}
-                                        </Card.Text>
-                                        <Card.Text>
-                                        ${product.productPrice}
-                                        </Card.Text>
-                                        
-                                    </Card.Body>
-                                </Card>                                
+                            this.state.products.map(
+                                product =>
+                                <div>                                                  
+                                    <Card className="mb-8" style={{margin: '1rem', width: '18rem' , textAlign: "center" }} key={product.productId}>
+                                        <Card.Img variant="top" src={product.image} />
+                                        <Card.Body>
+                                            <Card.Title>{product.productName}</Card.Title>
+                                            <Card.Text>
+                                            {product.productDescription}
+                                            </Card.Text>
+                                            <Card.Text>
+                                            ${product.productPrice}
+                                            </Card.Text>
+                                            
+                                        </Card.Body>
+                                    </Card>                                                         
+                                
+                                </div>
                             )
                         }
                     </CardGroup>    
                     <br/>
-                    
+                    <h3 className="bg-success p-2" style={{ opacity: .8}}>Number of items: {this.state.products.length}</h3>
+                    <h2 className="bg-success p-2 text-white">Total: ${this.state.products.reduce((a, v) => a = a + v.productPrice, 0)}</h2>
                     <br/>
                  
            </div>

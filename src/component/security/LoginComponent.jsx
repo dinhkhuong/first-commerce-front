@@ -46,9 +46,9 @@ class LoginComponent extends Component {
     render() {
         return (
             <div>
-                <h1 style={{textAlign: "center"}}>Login</h1>
+                <h1 className="text-warning" style={{textAlign: "center"}}>Login</h1>
                 <br/>
-                <div className="container" style={{textAlign: "center"}}>
+                <div className="container text-warning" style={{textAlign: "center"}}>
                     {/*<ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed}/>*/}
                     {this.state.hasLoginFailed && <div className="alert alert-warning">Invalid Credentials</div>}
                     {this.state.showSuccessMessage && <div>Login Sucessful</div>}

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ProductDataService from '../../service/ProductDataService'
-import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import CardGroup from 'react-bootstrap/CardGroup'
  
@@ -39,33 +38,32 @@ class AllProductComponent extends Component {
 
     render() {
         return(
-            <div className="container">
-                
-                    <br/>
-                    
-                    <CardGroup>
-                        {
-                            this.state.products.map (
-                                product =>                                                  
-                                <Card className="mb-2" style={{ width: '18rem' , textAlign: "center" }} key={product.productId}>
-                                    <Card.Img variant="top" src={product.image} />
-                                    <Card.Body>
-                                        <Card.Title>{product.productName}</Card.Title>
-                                        <Card.Text>
-                                        {product.productDescription}
-                                        </Card.Text>
-                                        <Card.Text>
-                                        ${product.productPrice}
-                                        </Card.Text>
-                                        <Button className="sticky-bottom" variant="primary" onClick={() => this.addToCartClicked(product.productId)}>Add To Cart</Button>
-                                    </Card.Body>
-                                </Card>                                
-                            )
-                        }
-                    </CardGroup>    
-                    <br/>
-                    
-                   <br/>
+            <div className="container   bg-success " style={{marginTop: '.5rem'}}>
+                <div class="row">
+                    <div class="col-12">
+                        <br/>                    
+                        <CardGroup className="mt-4">
+                            {
+                                this.state.products.map (
+                                    product =>                                                  
+                                                                        
+                                    <div classname="card mb-2 " style={{margin: '1.2%', width: '18rem' , textAlign: "center" }} key={product.productId}>
+                                        <img className="card-img-top img-thumbnail " src={product.image} alt={product.productName}></img>
+                                        <div className="card-body">
+                                            <h5 className="card-title">{product.productName}</h5>
+                                            <p class="card-text">{product.productDescription}</p>
+                                            <p class="card-text">${product.productPrice}</p>
+                                            <Button className="btn btn-danger sticky-bottom" variant="primary" onClick={() => this.addToCartClicked(product.productId)}>Add To Cart</Button>
+                                        </div>
+
+                                    </div>
+                                    
+                                )
+                            }
+                        </CardGroup>    
+                        <br/>   
+                    </div>
+                </div>   
                  
            </div>
        )
